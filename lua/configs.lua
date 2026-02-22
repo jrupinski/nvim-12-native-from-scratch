@@ -29,12 +29,6 @@ opt.confirm = true
 -- Preview substitutions live, as you type!
 opt.inccommand = 'split'
 
--- Decrease update time
-opt.updatetime = 250
-
--- Decrease mapped sequence wait time
-opt.timeoutlen = 300
-
 -- Sets how neovim will display certain whitespace characters in the editor.
 opt.listchars = { tab = '» ', trail = '·', lead = '·', nbsp = '␣' }
 
