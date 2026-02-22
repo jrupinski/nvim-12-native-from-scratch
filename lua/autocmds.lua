@@ -6,11 +6,10 @@ local augroup = vim.api.nvim_create_augroup
 --  See `:help vim.highlight.on_yank()`
 local highlight_group = augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({ timeout = 170 })
-    end,
-    group = highlight_group
+  desc = 'Highlight when yanking (copying) text',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({ timeout = 170 })
+  end,
+  group = highlight_group
 })
-

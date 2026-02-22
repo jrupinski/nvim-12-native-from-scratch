@@ -20,17 +20,17 @@ keymap("n", "j", function()
 end, { expr = true, silent = true }) -- Move down, but use 'gj' if no count is given
 keymap("n", "k", function()
   return tonumber(vim.api.nvim_get_vvar("count")) > 0 and "k" or "gk"
-end, { expr = true, silent = true }) -- Move up, but use 'gk' if no count is given
-keymap("n", "<C-d>", "<C-d>zz") -- Scroll down and center the cursor
-keymap("n", "<C-u>", "<C-u>zz") -- Scroll up and center the cursor
-keymap("n", "<Leader>w", "<cmd>w!<CR>", s) -- Save the current file
-keymap("n", "<Leader>q", "<cmd>q<CR>", s) -- Quit Neovim
-keymap("n", "<Leader>te", "<cmd>tabnew<CR>", s) -- Open a new tab
-keymap("n", "<Leader>%", "<cmd>vsplit<CR>", s) -- Split the window vertically
-keymap("n", "<Leader>\"", "<cmd>split<CR>", s) -- Split the window horizontally
+end, { expr = true, silent = true })                         -- Move up, but use 'gk' if no count is given
+keymap("n", "<C-d>", "<C-d>zz")                              -- Scroll down and center the cursor
+keymap("n", "<C-u>", "<C-u>zz")                              -- Scroll up and center the cursor
+keymap("n", "<Leader>w", "<cmd>w!<CR>", s)                   -- Save the current file
+keymap("n", "<Leader>q", "<cmd>q<CR>", s)                    -- Quit Neovim
+keymap("n", "<Leader>te", "<cmd>tabnew<CR>", s)              -- Open a new tab
+keymap("n", "<Leader>%", "<cmd>vsplit<CR>", s)               -- Split the window vertically
+keymap("n", "<Leader>\"", "<cmd>split<CR>", s)               -- Split the window horizontally
 keymap("n", "<Leader>f", ":lua vim.lsp.buf.format()<CR>", s) -- Format the current buffer using LSP
-keymap("v", "p", '"_dP') -- Paste without overwriting the default register
-keymap("t", "<Esc>", "<C-\\><C-N>") -- Exit terminal mode
+keymap("v", "p", '"_dP')                                     -- Paste without overwriting the default register
+keymap("t", "<Esc>", "<C-\\><C-N>")                          -- Exit terminal mode
 -- Change directory to the current file's directory
 keymap("n", "<leader>cd", '<cmd>lua vim.fn.chdir(vim.fn.expand("%:p:h"))<CR>')
 
@@ -41,7 +41,7 @@ keymap('n', 'grn', lsp.rename, { silent = true, desc = 'LSP: [R]e[n]ame' })
 
 -- Execute a code action, usually your cursor needs to be on top of an error
 -- or a suggestion from your LSP for this to activate.
-keymap({'n', 'x'}, 'gra', lsp.code_action, { silent = true, desc = '[G]oto Code [A]ction' })
+keymap({ 'n', 'x' }, 'gra', lsp.code_action, { silent = true, desc = '[G]oto Code [A]ction' })
 
 -- Find references for the word under your cursor.
 keymap('n', 'grr', lsp.references, { silent = true, desc = 'LSP: [G]oto [R]eferences' })

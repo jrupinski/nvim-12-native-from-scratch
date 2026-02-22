@@ -1,13 +1,13 @@
 local opt = vim.opt
 
 -- Sync clipboard between OS and Neovim
-opt.clipboard = 'unnamedplus' 
+opt.clipboard = 'unnamedplus'
 
 -- Show line numbers
-opt.number = true 
+opt.number = true
 
 -- Show relative line numbers
-opt.relativenumber = true 
+opt.relativenumber = true
 
 -- Directory for undo files
 opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
@@ -35,19 +35,19 @@ vim.opt.signcolumn = 'yes'
 -- Sets how neovim will display certain whitespace characters in the editor.
 opt.listchars = { tab = '» ', trail = '·', lead = '·', nbsp = '␣' }
 
- -- Enable auto indentation
+-- Enable auto indentation
 opt.autoindent = true
 
- -- Use spaces instead of tabs
+-- Use spaces instead of tabs
 opt.expandtab = true
 
- -- Number of spaces for a tab
+-- Number of spaces for a tab
 opt.tabstop = 2
 
- -- Number of spaces for a tab when editing
+-- Number of spaces for a tab when editing
 opt.softtabstop = 2
 
- -- Number of spaces for autoindent
+-- Number of spaces for autoindent
 opt.shiftwidth = 2
 
 -- Round indent to multiple of shiftwidth
@@ -89,3 +89,32 @@ opt.completeopt = { "menuone", "popup", "noinsert" }
 -- Use rounded borders for windows
 opt.winborder = "rounded"
 
+
+-- Diagnostic Config
+-- See :help vim.diagnostic.Opts
+vim.diagnostic.config {
+  severity_sort = true,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.INFO] = '󰋽 ',
+      [vim.diagnostic.severity.HINT] = '󰌶 ',
+    },
+  } or {},
+  virtual_text = {
+    source = 'if_many',
+    spacing = 2,
+    format = function(diagnostic)
+      local diagnostic_message = {
+        [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        [vim.diagnostic.severity.WARN] = diagnostic.message,
+        [vim.diagnostic.severity.INFO] = diagnostic.message,
+        [vim.diagnostic.severity.HINT] = diagnostic.message,
+      }
+      return diagnostic_message[diagnostic.severity]
+    end,
+  },
+}
