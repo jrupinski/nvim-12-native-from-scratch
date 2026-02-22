@@ -29,6 +29,9 @@ opt.confirm = true
 -- Preview substitutions live, as you type!
 opt.inccommand = 'split'
 
+-- Keep signcolumn on by default
+vim.opt.signcolumn = 'yes'
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 opt.listchars = { tab = '» ', trail = '·', lead = '·', nbsp = '␣' }
 
