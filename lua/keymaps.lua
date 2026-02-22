@@ -11,6 +11,9 @@ vim.g.maplocalleader = ' '
 -- Disable space in normal mode, just in case of legacy behavior
 keymap("n", "<space>", "<Nop>")
 
+-- Update packages
+keymap("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
+
 -- Some keymaps from a minimalistic setup - TBD if they'll be useful QOL change
 keymap("n", "j", function()
   return tonumber(vim.api.nvim_get_vvar("count")) > 0 and "j" or "gj"
@@ -69,3 +72,6 @@ keymap('n', 'gW', lsp.workspace_symbol, { silent = true, desc = 'LSP: Open Works
 --  the definition of its *type*, not where it was *defined*.
 keymap('n', 'grt', lsp.type_definition, { silent = true, desc = 'LSP: [G]oto [T]ype Definition' })
 
+-- PLUGIN KEYMAPS --
+-- Oil (file navigation)
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
