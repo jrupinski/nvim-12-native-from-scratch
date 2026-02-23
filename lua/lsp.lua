@@ -5,4 +5,3 @@ vim.lsp.enable({
   "ts_ls",
   "ruby_lsp",
 })
-vim.diagnostic.config({ virtual_text = true })
