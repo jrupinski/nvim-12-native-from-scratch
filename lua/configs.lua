@@ -26,9 +26,6 @@ opt.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 opt.confirm = true
 
--- Preview substitutions live, as you type!
-opt.inccommand = 'split'
-
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
