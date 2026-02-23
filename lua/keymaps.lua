@@ -71,7 +71,3 @@ keymap('n', 'gW', lsp.workspace_symbol, { silent = true, desc = 'LSP: Open Works
 --  Useful when you're not sure what type a variable is and you want to see
 --  the definition of its *type*, not where it was *defined*.
 keymap('n', 'grt', lsp.type_definition, { silent = true, desc = 'LSP: [G]oto [T]ype Definition' })
-
--- PLUGIN KEYMAPS --
--- Oil (file navigation)
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
