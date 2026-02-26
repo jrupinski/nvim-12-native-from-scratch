@@ -1,6 +1,7 @@
 require('configs')
 require('keymaps')
 require('autocmds')
+require('theme')
 
 --  Uncomment the following block and add your plugins to `lua/plugins/*.lua` to get going.
 -- AI slop to recursively import plugins separately
