@@ -3,6 +3,13 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.icons" },
 }
 )
+require("fzf-lua").setup({
+  lsp = {
+    -- Increase timeout to 20 seconds for large projects
+    async_or_timeout = 20000,
+  },
+})
+
 -- Copy over kickstart telescope keymaps, just switch provider to fzf-lua and adjust some calls.
 local builtin = require 'fzf-lua'
 -- Register fzf-lua as the UI interface for vim.ui.select
