@@ -4,7 +4,7 @@ vim.pack.add({
 })
 
 -- Set the runner strategy to vimux
-vim.g['test#strategy'] = 'vimux'
+vim.g['test#strategy'] = 'neovim'
 
 -- Custom work executables for Ruby/Rails
 -- but the general 'ruby#executable' works as a fallback.
