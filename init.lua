@@ -4,7 +4,6 @@ require('autocmds')
 require('theme')
 
 --  Uncomment the following block and add your plugins to `lua/plugins/*.lua` to get going.
--- AI slop to recursively import plugins separately
 -- Native equivalent of { import = 'custom.plugins' }
 local plugin_dir = vim.fn.stdpath("config") .. "/lua/plugins"
 
