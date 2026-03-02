@@ -12,6 +12,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_enable = true,
 })
+require("fidget").setup()
 
 vim.keymap.set("n", "<leader>li", ":LspInstall<CR>", { desc = "[L]SP [I]nstall" })
 vim.keymap.set("n", "<leader>lh", ":checkhealth vim.lsp<CR>", { desc = "[L]SP [H]ealth" })
