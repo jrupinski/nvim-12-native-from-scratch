@@ -1,4 +1,4 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  { src = "https://github.com/nvim-mini/mini.statusline" },
 })
-require('lualine').setup()
+require('mini.statusline').setup()
