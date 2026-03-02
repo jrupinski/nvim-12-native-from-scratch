@@ -31,4 +31,3 @@ keymap("n", "<Leader>f", ":lua vim.lsp.buf.format()<CR>", { silent = true, desc 
 keymap("v", "p", '"_dP', { desc = '[p]aste without yank' })
 keymap("t", "<Esc>", "<C-\\><C-N>", { desc = 'exit terminal mode' })
 keymap("n", "<leader>cd", '<cmd>lua vim.fn.chdir(vim.fn.expand("%:p:h"))<CR>', { desc = '[c]hange [d]irectory to file' })
-

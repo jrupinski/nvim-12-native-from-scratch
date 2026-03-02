@@ -50,6 +50,5 @@ require('gitsigns').setup({
     map('n', '<leader>hD', function()
       gitsigns.diffthis '@'
     end, { desc = 'git [D]iff against last commit' })
-
   end,
 })
