@@ -19,8 +19,7 @@ Slimmer kickstart.nvim like configuration, utilizing nvim 0.12 native `vim.pack`
 - Keymap discovery (hints about available keys to press and their function)
 - Tmux navigation
 
-<details>
-<summary>Keymaps</summary>
+## Keymaps
 
 ### General
 
@@ -122,4 +121,3 @@ Slimmer kickstart.nvim like configuration, utilizing nvim 0.12 native `vim.pack`
 |-----|------|-------------|
 | `<leader>u` | n | Toggle Undo Tree |
 
-</details>
