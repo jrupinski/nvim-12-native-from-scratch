@@ -80,13 +80,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Disable swap files (no more annoying swap file errors)
 opt.swapfile = false
 
--- will probably migrate these to plugins
--- Always show completion menu, even if 1 option is available
-opt.completeopt = { "menuone", "popup", "noinsert" }
--- Use rounded borders for windows
-opt.winborder = "rounded"
-
-
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
