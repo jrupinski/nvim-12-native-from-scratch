@@ -5,8 +5,8 @@ vim.pack.add({
 )
 require("fzf-lua").setup({
   lsp = {
-    -- Increase timeout to 20 seconds for large projects
-    async_or_timeout = 20000,
+    -- Make it async to not timeout - show new stuff as it comes
+    async_or_timeout = true,
   },
 })
 
@@ -40,7 +40,7 @@ vim.keymap.set('n', 'grn', lsp.rename, { silent = true, desc = 'LSP: [R]e[n]ame'
 
 -- Execute a code action, usually your cursor needs to be on top of an error
 -- or a suggestion from your LSP for this to activate.
-vim.keymap.set({ 'n', 'x' }, 'gra', lsp.code_action, { silent = true, desc = '[G]oto Code [A]ction' })
+vim.keymap.set({ 'n', 'x' }, 'gra', lsp.code_action, { silent = true, desc = 'LSP: [G]oto Code [A]ction' })
 
 -- Find references for the word under your cursor.
 vim.keymap.set('n', 'grr', builtin.lsp_references, { silent = true, desc = 'LSP: [G]oto [R]eferences' })
@@ -70,3 +70,9 @@ vim.keymap.set('n', 'gW', builtin.lsp_workspace_symbols, { silent = true, desc =
 --  Useful when you're not sure what type a variable is and you want to see
 --  the definition of its *type*, not where it was *defined*.
 vim.keymap.set('n', 'grt', builtin.lsp_typedefs, { silent = true, desc = 'LSP: [G]oto [T]ype Definition' })
+
+-- Show documentation for the symbol under the cursor (Hover)
+vim.keymap.set('n', 'K', lsp.hover, { desc = 'LSP: [K] Hover Documentation' })
+
+-- Show signature help (useful when typing arguments for a method)
+vim.keymap.set('i', '<C-k>', lsp.signature_help, { desc = 'LSP: Signature Help' })
